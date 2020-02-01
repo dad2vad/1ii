@@ -9,7 +9,7 @@ const Home = () => {
     honeypot: '', // if any value received in this field, form submission will be ignored.
     message: '',
     replyTo: '@', // this will set replyTo of email to email address entered in the form
-    accessKey: '6812ac96-a07f-4608-8e2d-add86fee18ad' // get your access key from https://www.staticforms.xyz
+    accessKey: 'bf0a33e6-7e74-401a-bb42-ee0e8b5688f7' // get your access key from https://www.staticforms.xyz
   });
 
   const [response, setResponse] = useState({
