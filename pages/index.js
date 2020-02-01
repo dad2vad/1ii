@@ -23,6 +23,8 @@ const Home = () => {
   const handleSubmit = async e => {
     e.preventDefault();
     try {
+      
+      console.log(contact)
       const res = await fetch('https://api.staticforms.xyz/submit', {
         method: 'POST',
         body: JSON.stringify(contact),
