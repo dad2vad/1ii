@@ -57,15 +57,7 @@ const Home = () => {
     }
   };
   return (
-    <Layout>
-      <p>Hello Next.js</p>
-    </Layout>
-        <div>
-      <Link href="/about">
-        <a>About Page</a>
-      </Link>
-      <p>Hello Next.js</p>
-    </div>
+
     <div>
       <div className='section'>
         <div className='container'>
