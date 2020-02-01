@@ -32,7 +32,7 @@ const Home = () => {
   const handleSubmit = async e => {
     e.preventDefault();
     try {
-TO(
+TO()
       if (json.success) {
         setResponse({
           type: 'success',
