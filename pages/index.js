@@ -105,13 +105,13 @@ const Home = () => {
                       </div>
                     </div>
                     <div className='field'>
-                      <label className='label'>ХТО</label>
+                      <label className='label'>URL</label>
                       <div className='control'>
                         <input
                           className='input'
-                          type='email'
-                          placeholder='хто'
-                          name='email'
+                          type='url'
+                          placeholder='url'
+                          name='url'
                           onChange={handleChange}
                           required
                         />
@@ -133,6 +133,7 @@ const Home = () => {
                         />
                       </div>
                     </div>
+    
                     <div className='field'>
                       <label className='label'>ПРО</label>
                       <div className='control'>
