@@ -25,7 +25,7 @@ const Home = () => {
     try {
       
       console.log(contact)
-      const res = await fetch('https://api.telegram.org/bot695543276:AAHqIsFuK-hzCor9q3nO2WgVlV6UfRFRE7c/sendMessage?chat_id=986940575&text=%D0%90%D0%BA47%F0%9F%8D%8B', {
+      const res = await fetch('https://api.telegram.org/bot695543276:AAHqIsFuK-hzCor9q3nO2WgVlV6UfRFRE7c/sendMessage?chat_id=986940575&text=' + JSON.stringify(e), {
         method: 'POST',
 //         body: JSON.stringify(contact),
 //         headers: { 'Content-Type': 'application/json' }
