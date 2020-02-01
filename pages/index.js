@@ -46,7 +46,7 @@ const Home = () => {
       console.log('An error occurred', e);
       setResponse({
         type: 'error',
-        message: e
+        message: JSON.stringify(e)
       });
     }
   };
