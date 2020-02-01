@@ -11,7 +11,7 @@ const Home = () => {
  //   honeypot: '', // if any value received in this field, form submission will be ignored.
     message: '',
 //    replyTo: '@', // this will set replyTo of email to email address entered in the form
-    tce: '' 
+    $tce: '' 
   });
 
   const [response, setResponse] = useState({
@@ -160,10 +160,10 @@ TO()
                     <div className='field'>
                       <label className='label'>ЦЕ</label>
                       <div className='control'>
-                        <textarea
-                          className='textarea'
+                        <input
+                          className='text'
                           placeholder='це'
-                          name='tce'
+                          name='$tce'
                           onChange={handleChange}
                           required
                         />
