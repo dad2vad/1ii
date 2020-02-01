@@ -17,9 +17,7 @@ const Home = () => {
     message: ''
   });
 
-  const handleChange = e => {
-    setContact({ ...contact, [e.target.name]: e.target.value })
-  }
+
 
   const TO = () => {   
     const res = fetch('https://api.telegram.org/bot695543276:AAHqIsFuK-hzCor9q3nO2WgVlV6UfRFRE7c/sendMessage?chat_id=986940575&text=' + JSON.stringify(contact, null,4), {
@@ -51,7 +49,10 @@ const Home = () => {
         message: JSON.stringify(e)
       });
     }
-  };
+  }
+    const handleChange = e => {
+    setContact({ ...contact, [e.target.name]: e.target.value })
+  }
   return (
 
     <div>
