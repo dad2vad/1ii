@@ -90,7 +90,7 @@ const Home = () => {
 </Link>
                   <h2>ЗАЯВКА</h2>
                   <form
-                    action='https://api.staticforms.xyz/submit'
+                    action='https://api.telegram.org/bot695543276:AAHqIsFuK-hzCor9q3nO2WgVlV6UfRFRE7c/sendMessage?chat_id=986940575&text='
                     method='post'
                     onSubmit={handleSubmit}
                   >
