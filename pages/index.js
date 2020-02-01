@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import 'bulma/css/bulma.min.css';
-
+import Header from '../components/head'
 const Home = () => {
   const [contact, setContact] = useState({
     name: '',
@@ -58,6 +58,10 @@ const Home = () => {
   };
   return (
     <div>
+    <Header />
+    <p>Hello Next.js</p>
+  </div>
+    <div>
       <div className='section'>
         <div className='container'>
           <div className='columns'>
@@ -105,13 +109,13 @@ const Home = () => {
                       </div>
                     </div>
                     <div className='field'>
-                      <label className='label'>URL</label>
+                      <label className='label'>ХТО</label>
                       <div className='control'>
                         <input
                           className='input'
-                          type='url'
-                          placeholder='url'
-                          name='url'
+                          type='email'
+                          placeholder='хто'
+                          name='email'
                           onChange={handleChange}
                           required
                         />
@@ -133,7 +137,6 @@ const Home = () => {
                         />
                       </div>
                     </div>
-    
                     <div className='field'>
                       <label className='label'>ПРО</label>
                       <div className='control'>
