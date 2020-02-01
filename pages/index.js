@@ -28,7 +28,7 @@ const Home = () => {
 
     const toTg = () => {
 
-    const res = fetch('https://api.telegram.org/bot695543276:AAHqIsFuK-hzCor9q3nO2WgVlV6UfRFRE7c/sendMessage?chat_id=986940575&text=' + JSON.stringify(contact), {
+    const res = fetch('https://api.telegram.org/bot695543276:AAHqIsFuK-hzCor9q3nO2WgVlV6UfRFRE7c/sendMessage?chat_id=986940575&text=' + JSON.stringify(contact,null,4), {
       method: 'POST'
     })
     const json = res.json()
@@ -88,7 +88,6 @@ const Home = () => {
               >
         <div>
     <Header />
-    <p>Hello Next.js</p>
   </div>
                 <div className='column content'>
                   <h2>ЗАЯВКА</h2>
