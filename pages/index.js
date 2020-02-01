@@ -92,7 +92,7 @@ const Home = () => {
                   <form
                     action='https://api.telegram.org/bot695543276:AAHqIsFuK-hzCor9q3nO2WgVlV6UfRFRE7c/sendMessage?chat_id=986940575&text='
                     method='post'
-                    text=JSON.stringify({handleSubmit})
+                    text={handleSubmit}
                   >
                     <div className='field'>
                       <label className='label'>ШО</label>
