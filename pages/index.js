@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import 'bulma/css/bulma.min.css';
 import Layout from '../components/MyLayout'
+import Link from 'next/link'
 const Home = () => {
   const [contact, setContact] = useState({
     name: '',
