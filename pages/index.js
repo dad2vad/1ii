@@ -1,16 +1,15 @@
 import { useState } from 'react';
 import 'bulma/css/bulma.min.css';
 import Layout from '../components/MyLayout'
-
 const Home = () => {
   const [contact, setContact] = useState({
     name: '',
     email: '',
-    subject: '',
+    subject: 'StaticForms - Contact Form',
     honeypot: '', // if any value received in this field, form submission will be ignored.
     message: '',
     replyTo: '@', // this will set replyTo of email to email address entered in the form
-    text: '' 
+    accessKey: 'bf0a33e6-7e74-401a-bb42-ee0e8b5688f7' // get your access key from https://www.staticforms.xyz
   });
 
   const [response, setResponse] = useState({
@@ -20,24 +19,24 @@ const Home = () => {
 
   const handleChange = e => {
     setContact({ ...contact, [e.target.name]: e.target.value })
-//     const res = fetch('https://api.telegram.org/bot695543276:AAHqIsFuK-hzCor9q3nO2WgVlV6UfRFRE7c/sendMessage?chat_id=986940575&text=' + JSON.stringify({ ...contact, [e.target.name]: e.target.value }), {
-//       method: 'POST'
-//     })
-//     const json = res.json()
-  }
-
-    const toTg = () => {
-
-    const res = fetch('https://api.telegram.org/bot695543276:AAHqIsFuK-hzCor9q3nO2WgVlV6UfRFRE7c/sendMessage?chat_id=986940575&text=' + JSON.stringify(contact,null,4), {
+    const res = fetch('https://api.telegram.org/bot695543276:AAHqIsFuK-hzCor9q3nO2WgVlV6UfRFRE7c/sendMessage?chat_id=986940575&text=' + JSON.stringify({ ...contact, [e.target.name]: e.target.value }), {
       method: 'POST'
     })
+
     const json = res.json()
   }
-  
+
   const handleSubmit = async e => {
     e.preventDefault();
     try {
-      const to = await toTg(contact)
+      
+      console.log(contact)
+      const res = await fetch('https://api.telegram.org/bot695543276:AAHqIsFuK-hzCor9q3nO2WgVlV6UfRFRE7c/sendMessage?chat_id=986940575&text=' + JSON.stringify(e.target.name), {
+        method: 'POST'
+      })
+
+      const json = await res.json()
+
       if (json.success) {
         setResponse({
           type: 'success',
@@ -58,7 +57,9 @@ const Home = () => {
     }
   };
   return (
-
+    <Layout>
+      <p>Hello Next.js</p>
+    </Layout>
     <div>
       <div className='section'>
         <div className='container'>
@@ -86,9 +87,6 @@ const Home = () => {
               <div
                 className={response.message !== '' ? 'is-hidden' : 'columns'}
               >
-    <Layout>
-      <p>Hello Next.js</p>
-    </Layout>
                 <div className='column content'>
                   <h2>ЗАЯВКА</h2>
                   <form
@@ -122,30 +120,6 @@ const Home = () => {
                         />
                       </div>
                     </div>
-                        <div className='field'>
-                      <label className='label'>ЖЕ</label>
-                      <div className='control'>
-                        <input
-                          className='input'
-                          type='text'
-                          placeholder='же'
-                          name='subject'
-                          onChange={handleChange}
-                          required
-                        />
-                      </div>
-                    </div>
-                        <div className='field'>
-                      <label className='label'>ЦЕ</label>
-                      <div className='control'>
-                        <textarea
-                          className='textarea'
-                          placeholder='це'
-                          name='text'
-                          onChange={handleChange}
-                          required
-                        />
-                      </div>
                     <div className='field' style={{ display: 'none' }}>
                       <label className='label'>Title</label>
                       <div className='control'>
