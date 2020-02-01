@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import 'bulma/css/bulma.min.css';
-import Head from '../components/head'
+import Header from '../components/Header'
 
 const Home = () => {
   const [contact, setContact] = useState({
@@ -87,7 +87,7 @@ const Home = () => {
                 className={response.message !== '' ? 'is-hidden' : 'columns'}
               >
         <div>
-    <Head />
+    <Header />
     <p>Hello Next.js</p>
   </div>
                 <div className='column content'>
