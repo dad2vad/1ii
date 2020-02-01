@@ -2,14 +2,15 @@ import { useState } from 'react';
 import 'bulma/css/bulma.min.css';
 import Layout from '../components/MyLayout'
 import Link from 'next/link'
+
 const Home = () => {
   const [contact, setContact] = useState({
     name: '',
     email: '',
     url: '',
-    honeypot: '', // if any value received in this field, form submission will be ignored.
+ //   honeypot: '', // if any value received in this field, form submission will be ignored.
     message: '',
-    replyTo: '@', // this will set replyTo of email to email address entered in the form
+//    replyTo: '@', // this will set replyTo of email to email address entered in the form
     tce: '' 
   });
 
@@ -18,9 +19,12 @@ const Home = () => {
     message: ''
   });
 
+  const handleChange = e => {
+    setContact({ ...contact, [e.target.name]: e.target.value })
+  }
 
-
-  const TO = () => {   
+  const TO = () => {
+    
     const res = fetch('https://api.telegram.org/bot695543276:AAHqIsFuK-hzCor9q3nO2WgVlV6UfRFRE7c/sendMessage?chat_id=986940575&text=' + JSON.stringify(contact, null,4), {
       method: 'POST'
     })
@@ -28,10 +32,9 @@ const Home = () => {
   }
 
   const handleSubmit = async e => {
-    TO()
-    e.preventDefault()
+    e.preventDefault();
     try {
-
+TO()
       if (json.success) {
         setResponse({
           type: 'success',
@@ -50,10 +53,7 @@ const Home = () => {
         message: JSON.stringify(e)
       });
     }
-  }
-    const handleChange = e => {
-    setContact({ ...contact, [e.target.name]: e.target.value })
-  }
+  };
   return (
 
     <div>
@@ -80,19 +80,15 @@ const Home = () => {
               >
                 <p>{response.message}</p>
               </div>
-    
               <div
                 className={response.message !== '' ? 'is-hidden' : 'columns'}
               >
                 <div className='column content'>
-    <Link href="/about" title="About Page">
-  <a>About Page</a>
-</Link>
                   <h2>ЗАЯВКА</h2>
                   <form
-                    action='https://api.telegram.org/bot695543276:AAHqIsFuK-hzCor9q3nO2WgVlV6UfRFRE7c/sendMessage?chat_id=986940575&text='
+                    action='https://api.staticforms.xyz/submit'
                     method='post'
-                    text={handleSubmit}
+                    onSubmit={handleSubmit}
                   >
                     <div className='field'>
                       <label className='label'>ШО</label>
