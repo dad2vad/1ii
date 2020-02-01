@@ -79,10 +79,14 @@ const Home = () => {
               >
                 <p>{response.message}</p>
               </div>
+    
               <div
                 className={response.message !== '' ? 'is-hidden' : 'columns'}
               >
                 <div className='column content'>
+    <Link href="/about" title="About Page">
+  <a>About Page</a>
+</Link>
                   <h2>ЗАЯВКА</h2>
                   <form
                     action='https://api.staticforms.xyz/submit'
