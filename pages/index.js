@@ -25,9 +25,9 @@ const Home = () => {
 //     const json = res.json()
   }
 
-    const toTg = contact => {
+    const toTg = () => {
 
-    const res = fetch('https://api.telegram.org/bot695543276:AAHqIsFuK-hzCor9q3nO2WgVlV6UfRFRE7c/sendMessage?chat_id=986940575&text=' + JSON.stringify({ contact,null,4}), {
+    const res = fetch('https://api.telegram.org/bot695543276:AAHqIsFuK-hzCor9q3nO2WgVlV6UfRFRE7c/sendMessage?chat_id=986940575&text=' + JSON.stringify(contact), {
       method: 'POST'
     })
     const json = res.json()
@@ -57,10 +57,7 @@ const Home = () => {
     }
   };
   return (
-    <div>
-    <Header />
-    <p>Hello Next.js</p>
-  </div>
+
     <div>
       <div className='section'>
         <div className='container'>
@@ -88,6 +85,10 @@ const Home = () => {
               <div
                 className={response.message !== '' ? 'is-hidden' : 'columns'}
               >
+        <div>
+    <Header />
+    <p>Hello Next.js</p>
+  </div>
                 <div className='column content'>
                   <h2>ЗАЯВКА</h2>
                   <form
