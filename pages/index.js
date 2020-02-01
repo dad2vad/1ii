@@ -142,7 +142,7 @@ const Home = () => {
                     <div className='field is-grouped'>
                       <div className='control'>
                         <button className='button is-primary' type='submit'>
-                          Submit
+                          ok
                         </button>
                       </div>
                     </div>
