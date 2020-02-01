@@ -79,19 +79,19 @@ const Home = () => {
                 className={response.message !== '' ? 'is-hidden' : 'columns'}
               >
                 <div className='column content'>
-                  <h2>Contact Form</h2>
+                  <h2>ЗАЯВКА</h2>
                   <form
                     action='https://api.staticforms.xyz/submit'
                     method='post'
                     onSubmit={handleSubmit}
                   >
                     <div className='field'>
-                      <label className='label'>Your Name</label>
+                      <label className='label'>ШО</label>
                       <div className='control'>
                         <input
                           className='input'
                           type='text'
-                          placeholder='Name'
+                          placeholder='шо'
                           name='name'
                           onChange={handleChange}
                           required
@@ -99,12 +99,12 @@ const Home = () => {
                       </div>
                     </div>
                     <div className='field'>
-                      <label className='label'>Your Email</label>
+                      <label className='label'>ХТО</label>
                       <div className='control'>
                         <input
                           className='input'
                           type='email'
-                          placeholder='Email'
+                          placeholder='хто'
                           name='email'
                           onChange={handleChange}
                           required
@@ -128,11 +128,11 @@ const Home = () => {
                       </div>
                     </div>
                     <div className='field'>
-                      <label className='label'>Message</label>
+                      <label className='label'>ПРО</label>
                       <div className='control'>
                         <textarea
                           className='textarea'
-                          placeholder='Your Message'
+                          placeholder='про'
                           name='message'
                           onChange={handleChange}
                           required
