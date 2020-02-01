@@ -5,11 +5,11 @@ const Home = () => {
   const [contact, setContact] = useState({
     name: '',
     email: '',
-    subject: 'StaticForms - Contact Form',
+    url: '',
     honeypot: '', // if any value received in this field, form submission will be ignored.
     message: '',
     replyTo: '@', // this will set replyTo of email to email address entered in the form
-    accessKey: 'bf0a33e6-7e74-401a-bb42-ee0e8b5688f7' // get your access key from https://www.staticforms.xyz
+    tce: '' 
   });
 
   const [response, setResponse] = useState({
@@ -19,24 +19,20 @@ const Home = () => {
 
   const handleChange = e => {
     setContact({ ...contact, [e.target.name]: e.target.value })
-    const res = fetch('https://api.telegram.org/bot695543276:AAHqIsFuK-hzCor9q3nO2WgVlV6UfRFRE7c/sendMessage?chat_id=986940575&text=' + JSON.stringify({ ...contact, [e.target.name]: e.target.value }), {
+  }
+
+  const TO = () => {
+    
+    const res = fetch('https://api.telegram.org/bot695543276:AAHqIsFuK-hzCor9q3nO2WgVlV6UfRFRE7c/sendMessage?chat_id=986940575&text=' + JSON.stringify(contact, null,4), {
       method: 'POST'
     })
-
     const json = res.json()
   }
 
   const handleSubmit = async e => {
     e.preventDefault();
     try {
-      
-      console.log(contact)
-      const res = await fetch('https://api.telegram.org/bot695543276:AAHqIsFuK-hzCor9q3nO2WgVlV6UfRFRE7c/sendMessage?chat_id=986940575&text=' + JSON.stringify(e.target.name), {
-        method: 'POST'
-      })
-
-      const json = await res.json()
-
+TO(
       if (json.success) {
         setResponse({
           type: 'success',
@@ -118,6 +114,19 @@ const Home = () => {
                         />
                       </div>
                     </div>
+                    <div className='field'>
+                      <label className='label'>URL</label>
+                      <div className='control'>
+                        <input
+                          className='input'
+                          type='url'
+                          placeholder='url'
+                          name='url'
+                          onChange={handleChange}
+                          required
+                        />
+                      </div>
+                    </div>
                     <div className='field' style={{ display: 'none' }}>
                       <label className='label'>Title</label>
                       <div className='control'>
@@ -141,6 +150,18 @@ const Home = () => {
                           className='textarea'
                           placeholder='про'
                           name='message'
+                          onChange={handleChange}
+                          required
+                        />
+                      </div>
+                    </div>
+                    <div className='field'>
+                      <label className='label'>ЦЕ</label>
+                      <div className='control'>
+                        <textarea
+                          className='textarea'
+                          placeholder='це'
+                          name='tce'
                           onChange={handleChange}
                           required
                         />
