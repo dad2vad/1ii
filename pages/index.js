@@ -1,16 +1,16 @@
 import { useState } from 'react';
 import 'bulma/css/bulma.min.css';
-import Header from '../components/Header'
+import Layout from '../components/MyLayout'
 
 const Home = () => {
   const [contact, setContact] = useState({
     name: '',
     email: '',
-    subject: 'StaticForms - Contact Form',
+    subject: '',
     honeypot: '', // if any value received in this field, form submission will be ignored.
     message: '',
     replyTo: '@', // this will set replyTo of email to email address entered in the form
-    accessKey: 'bf0a33e6-7e74-401a-bb42-ee0e8b5688f7' // get your access key from https://www.staticforms.xyz
+    text: '' 
   });
 
   const [response, setResponse] = useState({
@@ -86,9 +86,9 @@ const Home = () => {
               <div
                 className={response.message !== '' ? 'is-hidden' : 'columns'}
               >
-        <div>
-    <Header />
-  </div>
+    <Layout>
+      <p>Hello Next.js</p>
+    </Layout>
                 <div className='column content'>
                   <h2>ЗАЯВКА</h2>
                   <form
@@ -122,6 +122,30 @@ const Home = () => {
                         />
                       </div>
                     </div>
+                        <div className='field'>
+                      <label className='label'>ЖЕ</label>
+                      <div className='control'>
+                        <input
+                          className='input'
+                          type='text'
+                          placeholder='же'
+                          name='subject'
+                          onChange={handleChange}
+                          required
+                        />
+                      </div>
+                    </div>
+                        <div className='field'>
+                      <label className='label'>ЦЕ</label>
+                      <div className='control'>
+                        <textarea
+                          className='textarea'
+                          placeholder='це'
+                          name='text'
+                          onChange={handleChange}
+                          required
+                        />
+                      </div>
                     <div className='field' style={{ display: 'none' }}>
                       <label className='label'>Title</label>
                       <div className='control'>
